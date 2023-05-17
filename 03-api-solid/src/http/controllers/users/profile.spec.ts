@@ -13,7 +13,7 @@ describe('Profile (e2e)', async () => {
   })
 
   it('should be able to get user profile', async () => {
-    const { token } = await createAndAuthenticateUser(app)
+    const { token } = await createAndAuthenticateUser(app, true)
 
     const profileResponse = await request(app.server)
       .get('/me')
@@ -33,6 +33,7 @@ describe('Profile (e2e)', async () => {
         id: expect.any(String),
         email: 'johndoe@example.com',
         password: undefined,
+        role: 'ADMIN',
       },
     })
   })
