@@ -18,7 +18,5 @@ test("create an answer", async () => {
     content: "Nova resposta",
   })
 
-  await 
-
   expect(answer.content).toEqual("Nova resposta")
 })
